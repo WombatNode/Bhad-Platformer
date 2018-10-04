@@ -19,7 +19,7 @@ public class playerHealth : MonoBehaviour {
 	{
 		if(col.gameObject.tag == "KillPlayer")
 		{
-			Destroy(this.gameObject);
+			//Destroy(this.gameObject);
 			gameOver ();
 		}
 	}

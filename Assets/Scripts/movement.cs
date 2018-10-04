@@ -6,7 +6,7 @@ public class movement : MonoBehaviour {
 public Rigidbody rb;
 public float speed;
 public float jumpspeed;
-private bool canjump;
+public bool canjump;
 	// Update is called once per frame
 	void Start () {
 	}
@@ -30,7 +30,6 @@ private bool canjump;
 		}
 		if (Input.GetKey("up") && canjump){
 			rb.velocity = new Vector3(rb.velocity.x, 10, rb.velocity.z);
-			Debug.Log("damo190");
 		}
 	}
 	void OnCollisionStay(Collision collider)
