@@ -53,15 +53,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\nextlevel.cs" />
      <Compile Include="Assets\Scripts\camerafollow.cs" />
      <Compile Include="Assets\Scripts\characterspawn.cs" />
      <Compile Include="Assets\Scripts\Endlevel.cs" />
      <Compile Include="Assets\Scripts\EnemySCRIPT.cs" />
+     <Compile Include="Assets\Scripts\GeneralController.cs" />
      <Compile Include="Assets\Scripts\movement.cs" />
+     <Compile Include="Assets\Scripts\nextlevel.cs" />
      <Compile Include="Assets\Scripts\opendoor.cs" />
      <Compile Include="Assets\Scripts\playerHealth.cs" />
      <Compile Include="Assets\Scripts\spawn.cs" />
+     <Compile Include="Assets\Scripts\TriggerNextLevel.cs" />
+     <None Include="Assets\Charmonman\OFL.txt" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/Users/Jaden/Wario/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

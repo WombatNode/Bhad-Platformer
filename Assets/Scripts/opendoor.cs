@@ -8,11 +8,14 @@ private Vector3 place;
 public GameObject player;
 public nextlevel Nextlevel;
 private int i;
+public GeneralController controller;
 	// Use this for initialization
 	void Start () {
 		opening = false;
 		i = 0;
 		player = GameObject.FindGameObjectWithTag("Player");
+		controller = GameObject.Find("Initialiser").GetComponent<GeneralController>();
+
 	}
 	void OnTriggerStay () {
 		if (Input.GetKey("up") && player.GetComponentInParent<movement>().canjump && !opening){
@@ -30,8 +33,11 @@ private int i;
 				transform.position = place + new Vector3(0, 0, Mathf.Sin(i * Mathf.Deg2Rad * 5));
 				//Disable controls, remove all velocity?
 			}
-			else if (i == 18){
-				//trigger next level
+			if (i == 0){
+				controller.playing = false;
+			}
+			if (i == 3){
+				//Trigger Next Level
 				Nextlevel.NextLevel();
 			}
 		}
