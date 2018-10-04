@@ -7,6 +7,7 @@ public Vector3Int coordinates;
 public Transform target;
 	// Use this for initialization
 	void Start () {
+		target = GameObject.FindGameObjectWithTag("MasterPlayer").GetComponentInParent<Transform>();
 		target.position = coordinates;
 	}
 

@@ -6,7 +6,9 @@ public class camerafollow : MonoBehaviour {
 public Transform target;
 private List<Vector3> oldcoordinates = new List<Vector3>();
 public int stalllength;
-	
+	void Start(){
+		target = GameObject.FindGameObjectWithTag("MasterPlayer").GetComponentInParent<Transform>();
+	}
 	// Update is called once per frame
 	void Update () {
 		oldcoordinates.Add(new Vector3(target.position.x, Mathf.Max(target.position.y, 0), -10));

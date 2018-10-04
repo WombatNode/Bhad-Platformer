@@ -10,6 +10,7 @@ public GeneralController controller;
 	// Use this for initialization
 	void Start () {
 		controller = GameObject.Find("Initialiser").GetComponent<GeneralController>();
+		target = GameObject.FindGameObjectWithTag("MasterPlayer").GetComponentInParent<Transform>();
 	}
 	
 	// Update is called once per frame
