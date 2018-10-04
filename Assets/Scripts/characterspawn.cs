@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class characterspawn : MonoBehaviour {
 public Vector3Int coordinates;
-public Transform target;
+private Transform target;
 	// Use this for initialization
 	void Start () {
 		target = GameObject.FindGameObjectWithTag("MasterPlayer").GetComponentInParent<Transform>();

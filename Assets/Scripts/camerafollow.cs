@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class camerafollow : MonoBehaviour {
-public Transform target;
+private Transform target;
 private List<Vector3> oldcoordinates = new List<Vector3>();
 public int stalllength;
 	void Start(){
