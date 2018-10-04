@@ -14,7 +14,7 @@ public GeneralController controller;
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (controller.playing){
+		if (controller.playing == 'p'){
 			rb.AddForce(new Vector3(0, -18, 0));
 			if (target.position.x > transform.position.x){
 				transform.position = new Vector3(transform.position.x + speed, transform.position.y, transform.position.z);

@@ -20,7 +20,6 @@ public GeneralController controller;
 	void OnTriggerStay () {
 		if (Input.GetKey("up") && player.GetComponentInParent<movement>().canjump && !opening){
 			opening = true;
-			Debug.Log("opendoor");
 			place = transform.position;
 		}
 	}
@@ -33,12 +32,16 @@ public GeneralController controller;
 				transform.position = place + new Vector3(0, 0, Mathf.Sin(i * Mathf.Deg2Rad * 5));
 				//Disable controls, remove all velocity?
 			}
-			if (i == 0){
-				controller.playing = false;
+			if (i == 1){
+				controller.playing = 'd';
+				controller.destination = transform.position + new Vector3(0, 1, 0);
+				controller.startmove = true;
 			}
-			if (i == 3){
+			if (i == 10){
 				//Trigger Next Level
 				Nextlevel.NextLevel();
+				controller.startmove = true;
+				controller.destination += new Vector3(0, 0, 1);
 			}
 		}
 	}

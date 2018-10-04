@@ -10,5 +10,8 @@ EditorBuildSettings:
     guid: 33bfe2f69afae40f1a103eea1a5fbb32
   - enabled: 1
     path: Assets/Levels/Testing 1.unity
-    guid: 2198fcadd0e454ac79c4deebaaf3e152
+    guid: 4f74af36a6a454f3db839683a8d70b4f
+  - enabled: 1
+    path: Assets/Levels/The Final Countdown.unity
+    guid: 088c44b5bc4d245a0bfc9633bd2f7b32
   m_configObjects: {}

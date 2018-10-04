@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GeneralController : MonoBehaviour {
-
-public bool playing;
+public Vector3 destination;
+public bool startmove;
+public char playing;
 	void Start () {
-		playing = true;
+		playing = 'p';
+		startmove = false;
 	}
 	
 
