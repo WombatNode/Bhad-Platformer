@@ -17,8 +17,8 @@ public GeneralController controller;
 		controller = GameObject.Find("Initialiser").GetComponent<GeneralController>();
 
 	}
-	void OnTriggerStay () {
-		if (Input.GetKey("up") && player.GetComponentInParent<movement>().canjump && !opening){
+	void OnTriggerStay (Collider collider) {
+		if (Input.GetKey("/") && player.GetComponentInParent<movement>().canjump && !opening && collider.tag == "Player"){
 			opening = true;
 			place = transform.position;
 		}

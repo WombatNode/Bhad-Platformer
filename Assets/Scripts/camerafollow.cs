@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class camerafollow : MonoBehaviour {
 private Transform target;
-private List<Vector3> oldcoordinates = new List<Vector3>();
 public int stalllength;
 	void Start(){
 		target = GameObject.FindGameObjectWithTag("MasterPlayer").GetComponentInParent<Transform>();
 	}
 	// Update is called once per frame
 	void Update () {
-		oldcoordinates.Add(new Vector3(target.position.x, Mathf.Max(target.position.y, 0), -10));
-		if (oldcoordinates.Count > stalllength){
-			transform.position = oldcoordinates[0];
-			oldcoordinates.RemoveAt(0);
+		if (target.transform.position.z > -0.01f && target.transform.position.z < 0.01f){
+			transform.position = new Vector3(target.position.x, Mathf.Max(target.position.y, 0), -10);
+			Debug.Log("zero eh");
+			}
+		else if (target.transform.position.z > 9.99f && target.transform.position.z < 10.01f){
+			transform.position = new Vector3(target.position.x, Mathf.Max(target.position.y, 0), 20);
 		}
+		else{
+			transform.position = target.position + new Vector3(0, 10, 0);
+			Debug.Log("not quite nada");
+		}
+		transform.rotation = Quaternion.LookRotation(target.position - transform.position);
 	}
 }
