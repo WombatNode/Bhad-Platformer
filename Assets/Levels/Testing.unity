@@ -1196,7 +1196,12 @@ Prefab:
     - target: {fileID: 114588981357841344, guid: c9bfce80eb2814d10ab70896913bd0c1,
         type: 2}
       propertyPath: coordinates.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114775418316308428, guid: c9bfce80eb2814d10ab70896913bd0c1,
+        type: 2}
+      propertyPath: coordinates.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4821216989803444, guid: c9bfce80eb2814d10ab70896913bd0c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1764,6 +1769,16 @@ Prefab:
         type: 2}
       propertyPath: coordinates.Array.data[1].y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114775418316308428, guid: c9bfce80eb2814d10ab70896913bd0c1,
+        type: 2}
+      propertyPath: coordinates.Array.data[0].x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114775418316308428, guid: c9bfce80eb2814d10ab70896913bd0c1,
+        type: 2}
+      propertyPath: coordinates.Array.data[0].y
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9bfce80eb2814d10ab70896913bd0c1, type: 2}

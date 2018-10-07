@@ -14,7 +14,6 @@ public Vector3 startlocation;
 	void Start () {
 		startlocation = transform.position;
 		player = GameObject.FindGameObjectWithTag("MasterPlayer");
-		Debug.Log(startlocation);
 		transform.rotation = Quaternion.Euler(0, 0, 0);
 		controller = GameObject.Find("Initialiser").GetComponent<GeneralController>();
 		playerrb = player.GetComponent<Rigidbody>();
@@ -54,8 +53,7 @@ public Vector3 startlocation;
 		
 	}
 	void OnTriggerStay (Collider collider){
-		Debug.Log(collider.tag);
-		if (Input.GetKey("/")){
+		if (Input.GetKey("z")){
 			itarget = 90;
 			controller.playing = 'f';
 		}

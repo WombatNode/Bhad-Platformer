@@ -5,21 +5,36 @@ using UnityEngine;
 public class camerafollow : MonoBehaviour {
 private Transform target;
 public int stalllength;
+Vector3 flat = new Vector3(0, 0, -9);
+Vector3 vert = new Vector3(0, 9, 0);
+float i;
+bool orientation;
 	void Start(){
 		target = GameObject.FindGameObjectWithTag("MasterPlayer").GetComponentInParent<Transform>();
+		i = 1;
+		orientation = true;
 	}
 	// Update is called once per frame
 	void Update () {
-		if (target.transform.position.z > -0.01f && target.transform.position.z < 0.01f){
-			transform.position = new Vector3(target.position.x, Mathf.Max(target.position.y, 0), -10);
-			Debug.Log("zero eh");
+		if (((target.transform.position.z > -0.01f && target.transform.position.z < 0.01f) || (target.transform.position.z > 9.99f && target.transform.position.z < 10.01f))){
+			if (!orientation){
+				orientation = true;
+				i = 0;
 			}
-		else if (target.transform.position.z > 9.99f && target.transform.position.z < 10.01f){
-			transform.position = new Vector3(target.position.x, Mathf.Max(target.position.y, 0), 20);
 		}
 		else{
-			transform.position = target.position + new Vector3(0, 10, 0);
-			Debug.Log("not quite nada");
+			if (orientation){
+				orientation = false;
+				i = 0;
+			}
+		}
+		if (orientation){
+			transform.position = target.position + Vector3.Slerp(vert, flat, i);
+		}else{
+			transform.position = target.position + Vector3.Slerp(flat, vert, i);
+		}
+		if (i < 1){
+			i += 0.0333f;
 		}
 		transform.rotation = Quaternion.LookRotation(target.position - transform.position);
 	}

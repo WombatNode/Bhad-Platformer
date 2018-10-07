@@ -18,7 +18,7 @@ public GeneralController controller;
 
 	}
 	void OnTriggerStay (Collider collider) {
-		if (Input.GetKey("/") && player.GetComponentInParent<movement>().canjump && !opening && collider.tag == "Player"){
+		if (Input.GetKey("z") && player.GetComponentInParent<movement>().canjump && !opening && collider.tag == "Player"){
 			opening = true;
 			place = transform.position;
 		}
