@@ -67,7 +67,6 @@ public GeneralController controller;
 			}
 		}
 		else if (controller.playing == 'd'){
-			Debug.Log("big banana");
 			if (controller.startmove){
 				pausemovedist = (controller.destination - transform.position) / 9;
 				controller.startmove = false;

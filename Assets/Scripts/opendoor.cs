@@ -23,7 +23,6 @@ public GeneralController controller;
 		if (Input.GetKey("z") && player.GetComponentInParent<movement>().canjump && !opening && collider.tag == "Player"){
 			opening = true;
 			place = transform.position;
-			maincamerafollow.stuck = true;
 		}
 	}
 	void Update(){
