@@ -7,6 +7,7 @@ private bool opening;
 private Vector3 place;
 public GameObject player;
 public nextlevel Nextlevel;
+public camerafollow maincamerafollow;
 private int i;
 public GeneralController controller;
 	// Use this for initialization
@@ -15,12 +16,14 @@ public GeneralController controller;
 		i = 0;
 		player = GameObject.FindGameObjectWithTag("Player");
 		controller = GameObject.Find("Initialiser").GetComponent<GeneralController>();
+		maincamerafollow = GameObject.Find("Main Camera").GetComponent<camerafollow>();
 
 	}
 	void OnTriggerStay (Collider collider) {
 		if (Input.GetKey("z") && player.GetComponentInParent<movement>().canjump && !opening && collider.tag == "Player"){
 			opening = true;
 			place = transform.position;
+			maincamerafollow.stuck = true;
 		}
 	}
 	void Update(){
